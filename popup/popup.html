@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annoying Element Remover</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="header-text">
+          <h1 class="app-name">Element Remover</h1>
+          <p class="site-name" id="site-name">Loading...</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="settings-toggle-btn" id="settings-toggle-btn" title="Open Settings">
+          Settings
+        </button>
+        <label class="master-toggle" title="Enable/disable all rules for this site">
+          <input type="checkbox" id="master-toggle" checked />
+          <span class="toggle-track"><span class="toggle-thumb"></span></span>
+        </label>
+      </div>
+    </header>
+
+    <!-- Pick Element Button -->
+    <div class="pick-section">
+      <button class="pick-btn" id="pick-btn">
+        <div class="pick-text">
+          <span class="pick-label">Pick Element to Hide</span>
+        </div>
+      </button>
+      <p class="tip">Tip: <strong>Right-click</strong> any element and select "Always hide this element"</p>
+    </div>
+
+    <!-- Rules List -->
+    <div class="rules-section">
+      <div class="rules-header">
+        <span class="rules-title">Hidden Elements</span>
+      </div>
+
+      <div class="rules-list" id="rules-list">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="empty-state" id="empty-state">
+        <p>No hidden elements active</p>
+      </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settings-panel">
+      <div class="settings-header">
+        <span class="settings-title">Settings</span>
+        <button class="settings-back-btn" id="settings-back-btn" title="Back to Rules">← Back</button>
+      </div>
+      <div class="settings-body">
+        <div class="settings-group">
+          <label class="settings-label">Backup & Sync</label>
+          <div class="settings-row">
+            <button class="settings-btn" id="export-btn" title="Export rules as JSON">Export</button>
+            <button class="settings-btn" id="import-btn" title="Import rules from JSON">Import</button>
+          </div>
+        </div>
+        <div class="settings-group">
+          <label class="settings-label">Reset Rules</label>
+          <button class="settings-btn settings-btn-danger" id="clear-site-btn" title="Clear all rules for this site">Clear Site Rules</button>
+        </div>
+      </div>
+      <input type="file" id="import-file" accept=".json" style="display:none" />
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

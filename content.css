@@ -1,0 +1,268 @@
+/* ============================================================
+   Annoying Element Remover - Swiss Grid Minimalist Theme Styles
+   ============================================================ */
+
+/* Hover highlight in selection mode - Swiss Red Accent */
+.aer-hovered {
+  outline: 3px solid #d90429 !important;
+  outline-offset: 2px !important;
+  cursor: crosshair !important;
+  transition: outline 0.05s ease !important;
+}
+
+/* Crosshair cursor on body during selection */
+.aer-selection-active,
+.aer-selection-active * {
+  cursor: crosshair !important;
+}
+
+/* ── Mode Indicator Bar ────────────────────────────────────── */
+.aer-mode-indicator {
+  position: fixed !important;
+  bottom: 28px !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(20px) !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  padding: 14px 28px !important;
+  border-radius: 0px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  font-family: 'Space Mono', 'Courier New', monospace !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  z-index: 2147483647 !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+  border: 2px solid #000000 !important;
+  opacity: 0 !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  pointer-events: all !important;
+}
+
+.aer-mode-indicator.aer-mode-indicator-visible {
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+.aer-mode-dot {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background: #d90429 !important;
+  animation: aer-pulse 1s infinite !important;
+  flex-shrink: 0 !important;
+}
+
+@keyframes aer-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.25); }
+}
+
+#aer-exit-mode-btn {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+  padding: 6px 14px !important;
+  border-radius: 0px !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+  transition: all 0.1s ease !important;
+}
+#aer-exit-mode-btn:hover {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* ── Toast Confirmation ────────────────────────────────────── */
+.aer-toast {
+  position: fixed !important;
+  bottom: 28px !important;
+  right: 28px !important;
+  width: 380px !important;
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  border-radius: 0px !important;
+  padding: 22px !important;
+  z-index: 2147483647 !important;
+  box-shadow: 8px 8px 0px #000000 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  pointer-events: all !important;
+}
+
+.aer-toast.aer-toast-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.aer-toast-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 14px !important;
+}
+
+.aer-toast-title-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.aer-toast-icon {
+  font-size: 18px !important;
+}
+
+.aer-toast-title {
+  color: #000000 !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aer-toast-close {
+  background: none !important;
+  border: none !important;
+  color: #000000 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  padding: 4px !important;
+  border-radius: 0px !important;
+  line-height: 1 !important;
+  transition: color 0.1s ease !important;
+}
+.aer-toast-close:hover {
+  color: #d90429 !important;
+}
+
+.aer-toast-element {
+  color: #000000 !important;
+  font-size: 11px !important;
+  font-family: 'Space Mono', 'Courier New', monospace !important;
+  background: #f5f5f7 !important;
+  border-radius: 0px !important;
+  padding: 8px 12px !important;
+  margin-bottom: 8px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  border: 1px solid #000000 !important;
+}
+
+.aer-toast-selector {
+  color: #666666 !important;
+  font-size: 10px !important;
+  font-family: 'Space Mono', 'Courier New', monospace !important;
+  margin-bottom: 14px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.aer-label-label {
+  display: block !important;
+  color: #000000 !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  margin-bottom: 6px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.aer-toast-input {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-size: 13px !important;
+  font-family: inherit !important;
+  padding: 10px 12px !important;
+  outline: none !important;
+  margin-bottom: 16px !important;
+  transition: border-color 0.1s ease !important;
+}
+.aer-toast-input:focus {
+  border-color: #d90429 !important;
+}
+
+.aer-toast-actions {
+  display: flex !important;
+  gap: 10px !important;
+}
+
+.aer-btn-cancel {
+  flex: 1 !important;
+  padding: 10px 12px !important;
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-size: 11px !important;
+  cursor: pointer !important;
+  font-family: 'Space Mono', 'Courier New', monospace !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  transition: all 0.1s ease !important;
+}
+.aer-btn-cancel:hover {
+  background: #f5f5f7 !important;
+}
+
+.aer-btn-confirm {
+  flex: 2 !important;
+  padding: 10px 12px !important;
+  background: #d90429 !important;
+  border: 2px solid #000000 !important;
+  border-radius: 0px !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  font-family: 'Space Mono', 'Courier New', monospace !important;
+  transition: all 0.1s ease !important;
+}
+.aer-btn-confirm:hover {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* ── Notification (Warnings) ───────────────────────────────── */
+.aer-notification {
+  position: fixed !important;
+  bottom: 28px !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(10px) !important;
+  padding: 12px 24px !important;
+  border-radius: 0px !important;
+  font-family: 'Space Mono', 'Courier New', monospace !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  z-index: 2147483647 !important;
+  opacity: 0 !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  pointer-events: none !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+}
+
+.aer-notification.aer-notif-visible {
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+.aer-notif-warning {
+  background: #ffffff !important;
+  color: #d90429 !important;
+}
